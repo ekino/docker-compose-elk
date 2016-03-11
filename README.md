@@ -1,4 +1,4 @@
-# ekino/elk
+# ekino/docker-compose-elk
 
 All-in-one ELK stack build docker-compose from official elasticsearch/logstash/kibana images
 
