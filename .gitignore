@@ -1,0 +1,5 @@
+elasticsearch/data/*
+!elasticsearch/data/.keep
+
+*.crt
+*.key

@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+
+  elasticsearch:
+    image: elasticsearch:2.2
+    ports:
+      - 9200:9200
+    volumes:
+      - "$PWD/elasticsearch/data:/usr/share/elasticsearch/data"
+
+  logstash:
+    image: logstash:2.2
+    command: 'logstash -f /config-dir/logstash.conf'
+    ports:
+      - 5000:5000
+    volumes:
+      - "$PWD/logstash/etc:/config-dir"
+
+  kibana:
+    image: kibana:4.4
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+      - 5601:5601
+
